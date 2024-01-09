@@ -1,0 +1,129 @@
+/* *** *** *** Custom Properties *** *** *** */
+:root {
+    --font: 'Work Sans', sans-serif;
+    --font-size: 16px;
+    --color-black: #000;
+    --color-white: hsl(0, 0%, 100%);
+    --color-light-pink: hsl(275, 100%, 97%);
+    --color-grayish-purple: hsl(292, 16%, 49%);
+    --color-dark-purple: hsl(292, 42%, 14%);
+    --bg-mobile: url(../assets/images/background-pattern-mobile.svg);
+    --bg-desktop: url(../assets/images/background-pattern-desktop.svg);
+}
+
+/* *** *** *** Reset *** *** *** */
+html {
+    box-sizing: border-box;
+    font-family: var(--font);
+    font-size: var(--font-size);
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+*, *:before, *:after { box-sizing: inherit; }
+
+h1, h2, h3, h4, h5, h6, p { margin: 0; }
+
+a { text-decoration: none; }
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+picture { display: block; }
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+button {
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+hr {
+    border-left-width: 0;
+    border-right-width: 0;
+}
+
+/* *** *** *** Components *** *** *** */
+/* *** Components / Accordion *** */
+.accordion {
+    width: min(80%, 550px);
+    padding: 1.5rem;
+    border-radius: 15px;
+    background-color: var(--color-white);
+    box-shadow: 5px 5px 10px #0005;
+}
+
+.accordion-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.accordion-icon { width: 2rem; }
+
+.accordion-title { font-size: 2.5rem; }
+
+.accordion-body {
+    display: flex;
+    flex-direction: column;
+}
+
+/* *** Components / Accordion Item *** */
+.accordion-item {
+    border-bottom: 2px solid var(--color-light-pink);
+}
+
+.accordion-item:last-child { border-bottom: none }
+
+.accordion-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+    width: 100%;
+    padding: 1.5rem 0;
+    text-align: left;
+}
+
+.accordion-item-content {
+    margin-bottom: 1.5rem; 
+    color: var(--color-grayish-purple);
+}
+
+.accordion-item-content--collapse {
+    display: none;
+}
+
+/* *** *** *** Site Styles *** *** *** */
+#root {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+    background-image: var(--bg-mobile);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.main { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5rem 0;
+    flex-grow: 1; 
+}
+
+.footer { padding: 1rem; }
+
+@media screen and (min-width: 1440px) {
+    #root { background-image: var(--bg-desktop); }
+}
